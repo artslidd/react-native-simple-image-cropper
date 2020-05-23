@@ -1,6 +1,6 @@
 import React, { PureComponent, ReactNode } from 'react';
 import { Image, Dimensions } from 'react-native';
-import ImageEditor from '@react-native-community/image-editor';
+import * as ImageManipulator from 'expo-image-manipulator';
 import ImageViewer from './ImageViewer';
 import {
   getPercentFromNumber,
@@ -47,7 +47,7 @@ const defaultProps = {
 };
 
 class ImageCropper extends PureComponent<IProps, IState> {
-  static crop = (params: ICropParams): Promise<string | null | undefined> => {
+  static crop = async (params: ICropParams) => {
     const {
       positionX,
       positionY,
@@ -123,11 +123,17 @@ class ImageCropper extends PureComponent<IProps, IState> {
       },
     };
 
-    return new Promise((resolve, reject) =>
-      ImageEditor.cropImage(imageUri, cropData)
-        .then(resolve)
-        .catch(reject),
-    );
+    const result = await ImageManipulator.manipulateAsync(imageUri, [
+      {
+        crop: {
+          originX: cropData.offset.x,
+          originY: cropData.offset.y,
+          width: cropData.displaySize.width,
+          height: cropData.displaySize.height,
+        },
+      },
+    ]);
+    return result;
   };
 
   static defaultProps = defaultProps;
@@ -236,7 +242,7 @@ class ImageCropper extends PureComponent<IProps, IState> {
           },
         );
       },
-      () => {},
+      () => { },
     );
   };
 
