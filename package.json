@@ -21,7 +21,7 @@
     "react-native": "*",
     "react-native-gesture-handler": "*",
     "react-native-reanimated": "*",
-    "react-native-redash": "*",
+    "react-native-redash": "*"
   },
   "devDependencies": {
     "@types/react": "^16.9.34",
@@ -44,6 +44,5 @@
     "react-native-reanimated": "^1.8.0",
     "react-native-redash": "^12.0.2",
     "typescript": "^3.8.3"
-  },
-  "dependencies": {}
+  }
 }
