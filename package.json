@@ -12,20 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/barrsan/react-native-simple-image-cropper.git"
+    "url": "https://github.com/artslidd/react-native-simple-image-cropper.git"
   },
   "author": "Alex Baretsky <41ax@mail.ru>",
   "license": "MIT",
   "peerDependencies": {
-    "@react-native-community/image-editor": "*",
     "react": "*",
     "react-native": "*",
     "react-native-gesture-handler": "*",
     "react-native-reanimated": "*",
-    "react-native-redash": "*"
+    "react-native-redash": "*",
   },
   "devDependencies": {
-    "@react-native-community/image-editor": "^2.3.0",
     "@types/react": "^16.9.34",
     "@types/react-native": "^0.62.2",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
@@ -47,7 +45,5 @@
     "react-native-redash": "^12.0.2",
     "typescript": "^3.8.3"
   },
-  "dependencies": {
-    "expo-image-manipulator": "^8.1.0"
-  }
+  "dependencies": {}
 }

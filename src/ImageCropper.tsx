@@ -123,17 +123,7 @@ class ImageCropper extends PureComponent<IProps, IState> {
       },
     };
 
-    const result = await ImageManipulator.manipulateAsync(imageUri, [
-      {
-        crop: {
-          originX: cropData.offset.x,
-          originY: cropData.offset.y,
-          width: cropData.displaySize.width,
-          height: cropData.displaySize.height,
-        },
-      },
-    ]);
-    return result;
+    return cropData;
   };
 
   static defaultProps = defaultProps;
