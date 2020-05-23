@@ -1,6 +1,5 @@
 import React, { PureComponent, ReactNode } from 'react';
 import { Image, Dimensions } from 'react-native';
-import * as ImageManipulator from 'expo-image-manipulator';
 import ImageViewer from './ImageViewer';
 import {
   getPercentFromNumber,
@@ -56,7 +55,6 @@ class ImageCropper extends PureComponent<IProps, IState> {
       fittedSize,
       cropSize,
       cropAreaSize,
-      imageUri,
     } = params;
 
     const offset = {
